@@ -1,12 +1,17 @@
 import Express from 'express';
+import { gamesCurrentUser } from '../../../PromClient/Proms/BubbleGumClicker.js';
 const Router = Express.Router();
 
-Router.get("/rtc", async(req, res) => {
-    const Playing = await Bot.Redis.get("play_crate_playing");
-    const Visits = await Bot.Redis.get("play_crate_visits");
-    const Fans = await Bot.Redis.get("play_crate_group_count");
+Router.get('/rtc', async (req, res) => {
+	const Playing = await Bot.Redis.get('bubble_games_current_users');
+	const Visits = await Bot.Redis.get('bubble_games_current_visits');
+	const Fans = await Bot.Redis.get('play_crate_group_count');
 
-    return res.json([Playing, Visits, Fans])
-})
+	return res.json({
+		play_crate_fans: Fans,
+		play_crate_playing: Playing,
+		play_crate_visits: Visits,
+	});
+});
 
 export default Router;
