@@ -2,8 +2,8 @@ import Express from 'express';
 const Router = Express.Router();
 
 Router.get('/rtc', async (req, res) => {
-	const Playing = await Bot.Redis.get('bubble_games_current_users');
-	const Visits = await Bot.Redis.get('bubble_games_current_visits');
+	const Playing = await Bot.Redis.get('play_crate_games_current_users');
+	const Visits = await Bot.Redis.get('play_crate_games_current_visits');
 	const Fans = await Bot.Redis.get('play_crate_group_count');
 
 	return res.json({
