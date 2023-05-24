@@ -1,0 +1,36 @@
+{
+  "name": "new-playcrate-api",
+  "version": "1.0.0",
+  "description": "PlayCrate API V2",
+  "main": "build/main.js",
+  "author": "Kattah",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node-cron": "^3.0.7",
+    "@types/pg": "^8.10.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "ioredis": "^5.3.2",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.2",
+    "pg": "^8.11.0",
+    "prom-client": "^14.2.0",
+    "winston": "^3.8.2"
+  },
+  "scripts": {
+    "dev": "nodemon -e ts --exec \"yarn start\"",
+    "start": "tsc && rm -rf build/ && tsc && node .",
+    "format": "prettier --write src/**/*.{ts,js}"
+  }
+}
