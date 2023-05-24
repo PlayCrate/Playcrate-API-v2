@@ -1,5 +1,4 @@
 import Express from 'express';
-import { gamesCurrentUser } from '../../../PromClient/Proms/BubbleGumClicker.js';
 const Router = Express.Router();
 
 Router.get('/rtc', async (req, res) => {
